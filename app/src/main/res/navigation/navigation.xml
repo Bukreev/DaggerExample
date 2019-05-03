@@ -8,7 +8,11 @@
         android:id="@+id/dataInputFragment"
         android:name="com.bukreevei.daggerexample.DataInputFragment"
         android:label="fragment_data_input"
-        tools:layout="@layout/fragment_data_input" />
+        tools:layout="@layout/fragment_data_input" >
+        <action
+            android:id="@+id/action_dataInputFragment_to_dataOutputFragment"
+            app:destination="@id/dataOutputFragment" />
+    </fragment>
     <fragment
         android:id="@+id/dataOutputFragment"
         android:name="com.bukreevei.daggerexample.DataOutputFragment"
