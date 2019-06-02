@@ -1,17 +1,21 @@
 package com.bukreevei.daggerexample.viewmodel;
 
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
+import javax.inject.Inject;
+
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 public class DataViewModel extends ViewModel {
     private final MutableLiveData<String> nameLiveData;
     private final MutableLiveData<String> emailLiveData;
     private final MutableLiveData<String> phoneLiveData;
 
+    @Inject
     public DataViewModel() {
          this.nameLiveData = new MutableLiveData<>();
          this.emailLiveData = new MutableLiveData<>();
          this.phoneLiveData = new MutableLiveData<>();
+
     }
 
     public final void setName(final String data) {

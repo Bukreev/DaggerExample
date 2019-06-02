@@ -4,31 +4,49 @@
     tools:parentTag="android.widget.LinearLayout"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/input_name"
-        android:layout_height="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:inputType="textPersonName"
-        android:autofillHints="@string/name" />
-
-    <EditText
-        android:id="@+id/input_email"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:inputType="textEmailAddress"
-        android:autofillHints="@string/email" />
-
-    <EditText
-        android:id="@+id/input_phone"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:inputType="phone"
-        android:autofillHints="@string/phone" />
-
-    <Button
-        android:id="@+id/button_next"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="@string/button_next"/>
+        android:hint="@string/name">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_next"/>
 </merge>

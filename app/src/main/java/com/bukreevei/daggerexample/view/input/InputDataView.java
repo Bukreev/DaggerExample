@@ -1,7 +1,6 @@
 package com.bukreevei.daggerexample.view.input;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.Button;
@@ -12,8 +11,7 @@ import com.bukreevei.daggerexample.MainActivity;
 import com.bukreevei.daggerexample.R;
 import com.bukreevei.daggerexample.viewmodel.DataViewModel;
 
-import javax.inject.Inject;
-
+import androidx.annotation.Nullable;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -21,8 +19,7 @@ import butterknife.OnTextChanged;
 
 public class InputDataView extends LinearLayout {
 
-    @Inject
-    protected DataViewModel dataViewModel;
+    private final DataViewModel dataViewModel;
 
     @BindView(R.id.input_name)
     protected EditText inputName;
@@ -42,6 +39,8 @@ public class InputDataView extends LinearLayout {
         LayoutInflater.from(getContext()).inflate(R.layout.view_input_data, this);
         ButterKnife.bind(this);
         buttonNext.setEnabled(false);
+        final MainActivity activity = (MainActivity) getContext();
+        this.dataViewModel = activity.getDataViewModel();
     }
 
     @OnTextChanged(R.id.input_name)
